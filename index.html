@@ -1,0 +1,125 @@
+<html lang="en">
+  <!DOCTYPE html>
+  <html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+      }
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-300">
+  
+    <!-- Navbar -->
+    <nav class="bg-white dark:bg-gray-800 shadow-md transition-colors duration-300">
+      <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <!-- Logo -->
+        <a class="text-2xl font-bold" href="#">Oceanel Photography</a>
+    
+        <!-- Desktop Menu -->
+        <ul class="hidden md:flex space-x-6">
+          <li><a class="hover:text-gray-700 dark:hover:text-gray-300" href="index.html">Home</a></li>
+          <li><a class="hover:text-gray-700 dark:hover:text-gray-300" href="about.html">About</a></li>
+          <li><a class="hover:text-gray-700 dark:hover:text-gray-300" href="projects.html">Projects</a></li>
+          <li><a class="hover:text-gray-700 dark:hover:text-gray-300" href="contact.html">Contact</a></li>
+        </ul>
+    
+        <!-- Mobile Hamburger Button -->
+        <button id="menu-toggle" class="md:hidden text-2xl text-gray-800 dark:text-white focus:outline-none">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    
+      <!-- Slide-in Mobile Menu -->
+      <div id="menu" class="fixed top-0 right-[-100%] w-3/4 h-full bg-white dark:bg-gray-900 z-50 flex flex-col gap-4 p-6 transition-all duration-300 ease-in-out md:hidden">
+        <button id="menu-close" class="self-end text-2xl text-gray-800 dark:text-white"><i class="fas fa-times"></i></button>
+        <a href="index.html"class="hover:text-gray-700 dark:hover:text-gray-300">Home</a>
+        <a href="about.html"class="hover:text-gray-700 dark:hover:text-gray-300">About</a>
+        <a href="projects.html"class="hover:text-gray-700 dark:hover:text-gray-300">Projects</a>
+        <a href="contact.html"class="hover:text-gray-700 dark:hover:text-gray-300">Contact</a>
+      </div>
+    </nav>
+  
+    <!-- Dark Mode Toggle -->
+    <div class="fixed bottom-6 right-6 z-50">
+      <button id="darkToggle" class="p-3 rounded-full bg-gray-800 text-white dark:bg-white dark:text-black shadow-lg">
+        <i class="fas fa-moon"></i>
+      </button>
+    </div>
+  <!-- Hero Section -->
+  <section class="relative" id="home">
+   <img alt="A beautiful landscape photograph taken by the photographer" class="w-full h-screen object-cover" height="1080" src="https://storage.googleapis.com/a1aa/image/tmYdjkLCwezagv-iRmCJHEZzTtR0ILVqN1PsW0CkdR0.jpg" width="1920"/>
+   <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center text-white">
+    <h1 class="text-5xl font-bold mb-4">
+     Capturing Moments, One Click at a Time
+    </h1>
+    <p class="text-xl mb-8">
+     Explore the world through my lens
+    </p>
+    <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="projects.html">
+     View Projects
+    </a>
+   </div>
+  </section>
+  <!-- footer -->
+  <footer class="bg-gray-800 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+     <p>
+      © 2023 Oceanel Photography. All rights reserved.
+     </p>
+     <div class="flex justify-center space-x-4 mt-4">
+    
+      <a class="hover:text-gray-400" href="https://x.com/god_oceanel?s=21">
+       <i class="fab fa-twitter">
+       </i>
+      </a>
+      <a class="hover:text-gray-400" href="https://www.instagram.com/ggod_oceanel?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">
+       <i class="fab fa-instagram">
+       </i>
+      </a>
+      
+     </div>
+    </div>
+   </footer>
+   <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+
+    // Dark mode toggle
+    document.getElementById('darkToggle').addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+    });
+  </script>
+  <script>
+    const toggleBtn = document.getElementById('menu-toggle');
+    const closeBtn = document.getElementById('menu-close');
+    const menu = document.getElementById('menu');
+  
+    toggleBtn.addEventListener('click', () => {
+      menu.classList.toggle('right-0');
+      menu.classList.toggle('right-[-100%]');
+    });
+  
+    closeBtn.addEventListener('click', () => {
+      menu.classList.remove('right-0');
+      menu.classList.add('right-[-100%]');
+    });
+  </script>
+  </body>
+ </html>
